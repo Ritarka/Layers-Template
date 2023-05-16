@@ -39,7 +39,7 @@ main.o:./tb/tb_resnet.cpp
 
 csim.out: main.o $(IP_DEP)
 	$(CC)  $(GCOV)  $(CFLAG) -MMD $(IFLAG)  -o $@  $^ && ./csim.out
-	@$(MAKE) -s clean
+#@$(MAKE) -s clean
 
 synth:
 	vitis_hls script.tcl

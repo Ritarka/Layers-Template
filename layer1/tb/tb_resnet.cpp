@@ -8,7 +8,7 @@
 #include <fstream>
 #include <cmath>
 
-#include "layer1.h"
+#include "resnet.h"
 #include "tb_utils.h"
 #include "tb_utils.cpp"
 

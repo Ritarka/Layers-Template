@@ -7,7 +7,7 @@
 #include "resnet.h"
 #include "layer1/layer1.h"
 #include "layer2/layer2.h"
-// #include "layer3/layer3.h"
+#include "layer3/layer3.h"
 
 
 void layer_top (
@@ -23,7 +23,7 @@ void layer_top (
     wt_t layer_bias_3[512],
 
 
-    fm_t output_feature_map[128][92][160]
+    fm_t output_feature_map[512][92][160]
 )
 {
     //--------------------------------------------------------------------------
@@ -45,8 +45,8 @@ void layer_top (
     #pragma HLS INTERFACE s_axilite register	port=return
 
 
-    fm_t layer1_fm_buf[layer_1::OUT_FM_DEPTH][92][160] = {0};
-    fm_t layer2_fm_buf[128][92][160] = {0};
+    static fm_t layer1_fm_buf[layer_1::OUT_FM_DEPTH][92][160] = {0};
+    static fm_t layer2_fm_buf[layer_2::OUT_FM_DEPTH][92][160] = {0};
 
     layer_1::layer1(
         input_feature_map,
@@ -56,6 +56,10 @@ void layer_top (
         layer1_fm_buf
     );
 
+#ifdef CSIM_DEBUG
+
+#endif
+
     layer_2::layer2(
         layer1_fm_buf,
         layer_weights_2,
@@ -64,20 +68,15 @@ void layer_top (
         layer2_fm_buf
     );
 
-    // for (int i = 0; i < 128; i++)
-    //     for (int j = 0; j < 92; j++)
-    //         for (int k = 0; k < 160; k++)
-    //             output_feature_map[i][j][k] = 1;
+#ifdef CSIM_DEBUG
+#endif
 
-    // layer_3::layer3(
-    //     layer2_fm_buf,
-    //     layer_weights_3,
-    //     //skip_idx,
-    //     layer_bias_3,
-    //     output_feature_map,
-    //     input_feature_map
-    // );
-
-    
-
+    layer_3::layer3(
+        layer2_fm_buf,
+        layer_weights_3,
+        //skip_idx,
+        layer_bias_3,
+        output_feature_map,
+        input_feature_map
+    );
 }

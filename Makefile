@@ -11,6 +11,7 @@ IFLAG += -I "./layer3"
 
 ##IFLAG +=  -g -DCSIM_DEBUG
 
+#CFLAG += -fPIC -O3 -std=c++11 -mcmodel=large -pedantic -Wall -Wextra
 CFLAG += -fPIC -O3 -std=c++11 -mcmodel=large
 CC      = g++ 
 
@@ -87,7 +88,7 @@ clean:
 	rm -f -r csim.d 
 	rm -f *.gcno *.gcda *.txt *.o *.d
 #rm -rf proj/
-	rm -rf *.log
+#rm -rf *.log
 
 # smth:
 # 	g++ -E layer_top.cpp -I "."  -MMD -I "/tools/software/xilinx/Vitis_HLS/2022.1/include" -I "." -I "/usr/include/x86_64-linux-gnu" -I "./layer1" > layer_top.pre.cpp

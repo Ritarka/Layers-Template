@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------
 // Type conversions for simulation and synthesis
 //--------------------------------------------------------------------------
-#ifdef  CSIM_DEBUG
+#ifdef CSIM_DEBUG
     typedef float fm_t;
     typedef float wt_t;
 #else
@@ -33,5 +33,5 @@ void layer_top (
     wt_t layer_weights_3[512][128][1][1],
     wt_t layer_bias_3[512],
 
-    fm_t output_feature_map[128][92][160]
+    fm_t output_feature_map[512][92][160]
 );

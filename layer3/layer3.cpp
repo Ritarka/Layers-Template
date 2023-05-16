@@ -3,7 +3,7 @@
 // Author:      Akshay Karkal Kamath
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "layer3.h"
+#include "resnet.h"
 
 namespace layer_3 {
 
@@ -137,7 +137,7 @@ namespace layer_3 {
                 OH: 
                 for(int i = 0; i < TILE_HEIGHT; i+=STRIDE) 
                 {
-    #pragma HLS pipeline
+                    #pragma HLS pipeline
                     OW: 
                     for(int j = 0; j < TILE_WIDTH; j+=STRIDE) 
                     {

@@ -25,7 +25,7 @@ namespace layer_2 {
     //--------------------------------------------------------------------------
     // Layer Configuration  
     //--------------------------------------------------------------------------
-   const int IN_FM_DEPTH = 128;
+    const int IN_FM_DEPTH = 128;
     const int IN_FM_HEIGHT = 92;
     const int IN_FM_WIDTH = 160;
 

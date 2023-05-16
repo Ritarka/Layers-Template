@@ -19,7 +19,7 @@ using namespace std;
 // Convolution layer inputs, parameters, and reference output
 //--------------------------------------------------------------------------
 fm_t  input_feature_map[512][92][160];
-fm_t  output_feature_map[128][92][160] = {0};
+fm_t  output_feature_map[512][92][160] = {0};
 
 wt_t  layer_weights_1[128][512][1][1];
 wt_t  layer_bias_1[128];
@@ -33,7 +33,7 @@ wt_t layer_bias_3[512];
 
 
 // float layer_golden_out[layer_3::OUT_FM_DEPTH][92][160];
-float layer_golden_out[128][92][160];
+float layer_golden_out[512][92][160];
 
 
 //bool  skip_idx[OUT_FM_DEPTH][IN_FM_DEPTH];   
@@ -71,8 +71,8 @@ void read_bin_files()
 
 
 
-    Load_3D_Tensor<128, 92, 160, fm_t> 
-        (RESNET_L2_1_2_OUT_FM, layer_golden_out, FM);
+    Load_3D_Tensor<512, 92, 160, fm_t> 
+        (RESNET_L2_1_3_OUT_FM, layer_golden_out, FM);
     
     //Load_2D_Tensor_New<OUT_FM_DEPTH, IN_FM_DEPTH, bool>
     //    ("/usr/scratch/akamath47/IP2/py_test/skip_idx_1_0_2.bin", skip_idx);
@@ -107,7 +107,7 @@ int main ()
     std::cout << "Tiled-convolution simulation complete!\n" << std::endl;
     
     // mse = Compare_3D_Tensors<layer_3::OUT_FM_DEPTH, 92, 160, fm_t> 
-    mse = Compare_3D_Tensors<128, 92, 160, fm_t> 
+    mse = Compare_3D_Tensors<512, 92, 160, fm_t> 
              (layer_golden_out, output_feature_map);
 
     std::cout << "\nOutput MSE:  " << mse << std::endl;
