@@ -1,0 +1,293 @@
+{
+  "0": {
+    "basicblocks": 17,
+    "calls": "17 10 8",
+    "file": "layer_top.cpp",
+    "fileloc": 13,
+    "instructions": 39,
+    "loads": {
+      "G": 2
+    },
+    "name": "layer_top",
+    "stores": {
+      "G": 6
+    },
+    "total_instructions": 38938
+  },
+  "1": {
+    "basicblocks": 4970,
+    "calls": "",
+    "file": "layer2_layer2.cpp",
+    "fileloc": 128,
+    "instructions": 12672,
+    "loads": {
+      "L": 1120
+    },
+    "name": "conv",
+    "stores": {
+      "L": 480
+    },
+    "total_instructions": 12672
+  },
+  "10": {
+    "basicblocks": 22,
+    "calls": "11 4 18 1 16",
+    "file": "layer2_layer2.cpp",
+    "fileloc": 19,
+    "instructions": 76,
+    "name": "layer2",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 12923
+  },
+  "11": {
+    "basicblocks": 5,
+    "calls": "",
+    "file": "layer2_utils.cpp",
+    "fileloc": 84,
+    "instructions": 14,
+    "loads": {
+      "L": 1
+    },
+    "name": "load_bias",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 14
+  },
+  "12": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "layer1_utils.cpp",
+    "fileloc": 62,
+    "instructions": 23,
+    "loads": {
+      "L": 1
+    },
+    "name": "load_weight_slice",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 23
+  },
+  "13": {
+    "basicblocks": 43,
+    "calls": "",
+    "file": "layer3_utils.cpp",
+    "fileloc": 132,
+    "instructions": 155,
+    "loads": {
+      "L": 7
+    },
+    "name": "resnet_add_residual_fm",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 160
+  },
+  "14": {
+    "basicblocks": 23,
+    "calls": "",
+    "file": "layer3_utils.cpp",
+    "fileloc": 16,
+    "instructions": 52,
+    "loads": {
+      "G": 1
+    },
+    "name": "load_input_tile_slice",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 52
+  },
+  "15": {
+    "basicblocks": 23,
+    "calls": "",
+    "file": "layer1_utils.cpp",
+    "fileloc": 15,
+    "instructions": 52,
+    "loads": {
+      "L": 1
+    },
+    "name": "load_input_tile_slice",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 52
+  },
+  "16": {
+    "basicblocks": 28,
+    "calls": "",
+    "file": "layer2_utils.cpp",
+    "fileloc": 100,
+    "instructions": 78,
+    "loads": {
+      "L": 4
+    },
+    "name": "store_output_tile_slice",
+    "stores": {
+      "G": 2
+    },
+    "total_instructions": 78
+  },
+  "17": {
+    "basicblocks": 22,
+    "calls": "9 15 12 3 5",
+    "file": "layer1_layer1.cpp",
+    "fileloc": 18,
+    "instructions": 76,
+    "name": "layer1",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 12915
+  },
+  "18": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "layer2_utils.cpp",
+    "fileloc": 63,
+    "instructions": 23,
+    "loads": {
+      "L": 1
+    },
+    "name": "load_weight_slice",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 23
+  },
+  "19": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "layer3_utils.cpp",
+    "fileloc": 63,
+    "instructions": 23,
+    "loads": {
+      "L": 1
+    },
+    "name": "load_weight_slice",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 23
+  },
+  "2": {
+    "basicblocks": 5,
+    "calls": "",
+    "file": "layer3_utils.cpp",
+    "fileloc": 84,
+    "instructions": 14,
+    "loads": {
+      "L": 1
+    },
+    "name": "load_bias",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 14
+  },
+  "3": {
+    "basicblocks": 4970,
+    "calls": "",
+    "file": "layer1_layer1.cpp",
+    "fileloc": 127,
+    "instructions": 12672,
+    "loads": {
+      "L": 1120
+    },
+    "name": "conv",
+    "stores": {
+      "L": 480
+    },
+    "total_instructions": 12672
+  },
+  "4": {
+    "basicblocks": 23,
+    "calls": "",
+    "file": "layer2_utils.cpp",
+    "fileloc": 16,
+    "instructions": 60,
+    "loads": {
+      "G": 1
+    },
+    "name": "load_input_tile_slice",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 60
+  },
+  "5": {
+    "basicblocks": 28,
+    "calls": "",
+    "file": "layer1_utils.cpp",
+    "fileloc": 99,
+    "instructions": 78,
+    "loads": {
+      "L": 4
+    },
+    "name": "store_output_tile_slice",
+    "stores": {
+      "G": 2
+    },
+    "total_instructions": 78
+  },
+  "6": {
+    "basicblocks": 21,
+    "calls": "",
+    "file": "layer3_utils.cpp",
+    "fileloc": 100,
+    "instructions": 63,
+    "loads": {
+      "L": 4
+    },
+    "name": "store_output_tile_slice",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 63
+  },
+  "7": {
+    "basicblocks": 4970,
+    "calls": "",
+    "file": "layer3_layer3.cpp",
+    "fileloc": 123,
+    "instructions": 12672,
+    "loads": {
+      "L": 1120
+    },
+    "name": "conv",
+    "stores": {
+      "L": 480
+    },
+    "total_instructions": 12672
+  },
+  "8": {
+    "basicblocks": 22,
+    "calls": "2 14 19 7 6 13",
+    "file": "layer3_layer3.cpp",
+    "fileloc": 10,
+    "instructions": 77,
+    "name": "layer3",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 13061
+  },
+  "9": {
+    "basicblocks": 5,
+    "calls": "",
+    "file": "layer1_utils.cpp",
+    "fileloc": 83,
+    "instructions": 14,
+    "loads": {
+      "L": 1
+    },
+    "name": "load_bias",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 14
+  }
+}

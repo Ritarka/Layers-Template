@@ -1,0 +1,49 @@
+================================================================
+== Design Size Report
+================================================================
+
+* Instructions per Function for each Compilation Phase
++-----------------------------+-----------------------+--------------+---------------+----------------------+---------------+
+| Function                    | Location              | Compile/Link | Unroll/Inline | Performance/Pipeline | Optimizations |
++-----------------------------+-----------------------+--------------+---------------+----------------------+---------------+
+| + layer_top                 | layer_top.cpp:13      | 5,978        | 38,938        | 17,625               | 15,787        |
+|  + layer1                   | layer1_layer1.cpp:18  | 1,615        | 12,915        |                      |               |
+|     load_bias               | layer1_utils.cpp:83   |    16        |     14        |                      |               |
+|     load_input_tile_slice   | layer1_utils.cpp:15   |   195        |     52        |                      |               |
+|     load_weight_slice       | layer1_utils.cpp:62   |    33        |     23        |                      |               |
+|     conv                    | layer1_layer1.cpp:127 |   691        | 12,672        |                      |               |
+|     store_output_tile_slice | layer1_utils.cpp:99   |   443        |     78        |                      |               |
+|  + layer2                   | layer2_layer2.cpp:19  | 1,615        | 12,923        |  6,254               |  5,805        |
+|     load_bias               | layer2_utils.cpp:84   |    16        |     14        |                      |               |
+|     load_input_tile_slice   | layer2_utils.cpp:16   |   195        |     60        |                      |               |
+|     load_weight_slice       | layer2_utils.cpp:63   |    33        |     23        |                      |               |
+|     conv                    | layer2_layer2.cpp:128 |   691        | 12,672        |  3,556               |  3,566        |
+|     store_output_tile_slice | layer2_utils.cpp:100  |   443        |     78        |                      |               |
+|  + layer3                   | layer3_layer3.cpp:10  | 2,483        | 13,061        |  5,475               |  5,030        |
+|     load_bias               | layer3_utils.cpp:84   |    16        |     14        |                      |               |
+|     load_input_tile_slice   | layer3_utils.cpp:16   |   195        |     52        |                      |               |
+|     load_weight_slice       | layer3_utils.cpp:63   |    33        |     23        |                      |               |
+|     conv                    | layer3_layer3.cpp:123 |   691        | 12,672        |  3,372               |  3,376        |
+|     store_output_tile_slice | layer3_utils.cpp:100  |   289        |     63        |                      |               |
+|     resnet_add_residual_fm  | layer3_utils.cpp:132  | 1,021        |    160        |                      |               |
+|    conv                     | layer1_layer1.cpp:127 |              |               |  3,372               |  3,376        |
++-----------------------------+-----------------------+--------------+---------------+----------------------+---------------+
+
+* Description of Compilation Phases
++----------------------+------------------------------------------------------------+
+| Compilation Phase    | Description                                                |
++----------------------+------------------------------------------------------------+
+| Compile/Link         | All functions are compiled and linked into a single design |
+| Unroll/Inline        | After user unroll and inline pragmas are applied           |
+| Performance/Pipeline | After performance and pipeline pragmas are applied         |
+| Optimizations        | After high level synthesis optimizations                   |
++----------------------+------------------------------------------------------------+
+
+* Design Size Message Settings
++---------------------------------------------+--------+------------------------------------------------------------------+
+| Message Setting                             | Value  | Description                                                      |
++---------------------------------------------+--------+------------------------------------------------------------------+
+| config_compile -design_size_maximum_warning | 100000 | Show a warning when total design instructions exceeds this value |
++---------------------------------------------+--------+------------------------------------------------------------------+
+
+

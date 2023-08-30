@@ -3,7 +3,7 @@
 // Author:      Akshay Karkal Kamath
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "resnet.h"
+#include "layer3.h"
 
 namespace layer_3 {
 

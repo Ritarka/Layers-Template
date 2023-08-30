@@ -83,6 +83,7 @@ csim.out: main.o $(IP_DEP)
 
 synth:
 	vitis_hls script.tcl
+	code ./proj/solution1/syn/report/csynth.xml
 
 clean:
 	rm -f -r csim.d 
